@@ -7,7 +7,7 @@ machine:
     PATH: $ANDROID_NDK:$PATH
 test:
   override:
-    - ./gradlew assembleDebug -PdisablePreDex
+    - ./gradlew assembleDebug -PpreDexEnable=false
   post:
     # copy test report for Circle CI to display
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
